@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>uc</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="uc/uchearder.css"/>
+	<link rel="stylesheet" type="text/css" href="uc/css.css"/>
+	<script>
+		window.onload = function () {
+			var nav = document.getElementsByClassName('nav')[0];
+			var ali = nav.getElementsByTagName('li');
+			var aim = document.getElementsByClassName('im')[0];
+			var sc = document.getElementById('scroll');
+			var sp = sc.getElementsByTagName('span');
+			var im = document.getElementById('imm');
+			var sli = im.getElementsByTagName('li');
+			var that = null;
+
+			for (var i = 0; i < ali.length; i++) {
+				ali[i].onmouseover = function(){
+					that = this ;
+					fn("display:block");
+				}
+				ali[i].onmouseout = function(){
+					that = this ;
+					fn("display:none");
+				}
+			}	
+
+			function fn(a) {
+				if (that.getElementsByClassName('nv')[0]) {
+					that.getElementsByClassName('nv')[0].style = a;
+				}
+			}
+
+			clearInterval( im.timer );
+			
+			var num = 0 ;
+			
+			im.timer = setInterval(function () {
+				if (num<3) {
+					for (var i = 0; i < sli.length; i++) {
+						sli[i].style = "display:none";
+					}
+					sli[num].style = "display:block";num++;
+				}else{num = 0;}
+			}, 3000);
+
+			for (var i = 0; i < sp.length; i++) {
+				sp[i].index = i;
+				sp[i].onclick = function(){
+					for (var j = 0; j < sli.length; j++) {
+						sli[j].style = "display:none";
+						if (this.index == j) {
+							sli[j].style = "display:block";
+						}
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<div id="logo"><a href="#"><img src="uc/uclogo.png"/></a></div>
+		<div class="nav">
+			<ul>
+				<li class="na"><a href="#">首页</a></li>
+				<li><a href="#">下载</a>
+					<ul class="nv">
+						<li><a href="http://www.uc.cn/ucbrowser/download/" target="_blank">手机浏览器</a></li>
+	                    <li><a href="http://pc.uc.cn/" target="_blank">电脑浏览器</a></li>
+	                    <li><a href="http://tvb.uc.cn/" target="_blank">TV浏览器</a></li>
+	                    <li><a href="http://www.uc.cn/ucbrowser/lab/" target="_blank">Android实验室版</a></li>
+					</ul>
+				</li>
+				<li><a href="#">公司</a>
+					<ul class="nv">
+						<li><a href="http://www.uc.cn/company/about/" target="_blank">公司概况</a></li>
+	                    <li><a href="http://www.uc.cn/company/news/" target="_blank">公司动态</a></li>
+	                    <li><a href="http://www.uc.cn/company/exe/" target="_blank">管理团队</a></li>
+	                    <li><a href="http://www.uc.cn/company/culture/" target="_blank">企业文化</a></li>
+	                    <li><a href="http://www.uc.cn/a/ucfans/" target="_blank">粉丝专区</a></li>
+	                    <li><a href="http://www.uc.cn/company/award/" target="_blank">荣誉之旅</a></li>
+	                    <li><a href="http://www.uc.cn/corp/corp_lx.shtml" target="_blank">联系我们</a></li>
+	                    <li><a href="http://www.uc.cn/a/screen/" target="_blank">UC闪屏</a></li>
+	                    <li><a href="http://www.uc.cn/squirrel_zone/index.php" target="_blank">吉祥物专区</a></li>
+					</ul>
+				</li>
+				<li><a href="#">合作</a>
+					<ul class="nv">
+						<li><a href="http://www.uc.cn/business/uctop.shtml" target="_blank">广告合作</a></li>
+	                    <li><a href="http://www.uc.cn/business/ucmedia.shtml" target="_blank">媒体合作</a></li>
+	                    <li><a href="http://mp.uc.cn/" target="_blank">UC订阅号</a></li>
+	                    <li><a href="http://www.uc.cn/business/service/" target="_blank">运营商合作</a></li>
+	                    <li><a href="http://www.uc.cn/business/mobile/" target="_blank">终端厂商合作</a></li>
+	                    <li><a href="http://www.uc.cn/business/web/" target="_blank">互联网合作</a></li>
+	                    <li><a href="http://www.uc.cn/business/developer/" target="_blank">开发者中心</a></li>
+	                    <li><a rel="nofollow" href="http://open.25pp.com/" target="_blank">安卓开放平台</a></li>
+	                    <li><a href="http://www.uc.cn/business/9game.shtml" target="_blank">游戏开放平台</a></li>
+					</ul>
+				</li>
+				<li><a href="#">校园</a></li>
+				<li><a href="#">社区</a></li>
+				<li><a href="#">帮助</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="content">
+		<div id="scroll">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul id="imm">
+			<li style="display:block;"><div class="im" style="background:url(uc/uctoutiao.png) center no-repeat;"></div></li>
+			<li style="display:none;"><div class="im" style="background:url(uc/brand.jpg) center no-repeat;"></div></li>
+			<li style="display:none;"><div class="im" style="background:url(uc/pc5.jpg) center no-repeat;"></div></li>
+		</ul>	
+	</div>
+	<div class="plat">
+		<div id="ss"><img src="uc/twocode.png"><br/>手机扫一扫下载</div>
+		<ul class="list-plat">
+			<li>
+				<a class="android" href="">
+					<div class="ico"></div>
+					<div class="text">Android版下载</div>
+				</a>
+			</li>
+			<li>
+				<a class="iphone" href="">
+					<div class="ico"></div>
+					<div class="text">iphone版下载</div>
+				</a>
+			</li>
+			<li>
+				<a class="pc" href="">
+					<div class="ico"></div>
+					<div class="text">pc版下载</div>
+				</a>
+			</li>
+			<li>
+				<a class="pad" href="">
+					<div class="ico"></div>
+					<div class="text">pad版下载</div>
+				</a>
+			</li>
+			<li>
+				<a class="tv" href="">
+					<div class="ico"></div>
+					<div class="text">tv版下载</div>
+				</a>
+			</li>
+			<li>
+				<a class="wp" href="">
+					<div class="ico"></div>
+					<div class="text">wp版下载</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="new">
+		<div class="news">
+			<div class="nn">
+				<h3>活动专区</h3>
+				<a href="">更多 &gt;</a>
+			</div>
+			<a class="mm" href="">
+				<img src="uc/plan_290.jpg"><div>UC校园活动自主策划</div>
+			</a>
+			<ul>
+				<li><a href="">UC校园感恩节活动回顾</a></li>
+				<li><a href="">UC杯拔河大赛 被你们玩坏了</a></li>
+				<li><a href="">UC校园加油站，只为温暖师兄师姐心</a></li>
+				<li><a href="">求职季UC温暖护航</a></li>
+				<li><a href="">今天，我们都是师弟师妹鼓励师</a></li>
+			</ul>
+		</div>
+		<div class="news">
+			<div class="nn">
+				<h3>新闻动态</h3>
+				<a href="">更多 &gt;</a>
+			</div>
+			<a class="mm" href="">
+				<img src="uc/news27.jpg"><div>阿里游戏“T计划”出炉：全产业链力挺开发者</div>
+			</a>
+			<ul>
+				<li><a href="">阿里巴巴收购豌豆荚 并入阿里移动事</a><img src="uc/ico_new2.gif"></li>
+				<li><a href="">熬夜看球不寂寞 神马搜索带你“笑”</a><img src="uc/ico_new2.gif"></li>
+				<li><a href="">科技报报／俞永福讲行动网络 联想未 </a><img src="uc/ico_new2.gif"></li>
+				<li><a href="">神马搜索聚焦大数据营销 汇川广告平</a><img src="uc/ico_new2.gif"></li>
+				<li><a href="">阿里文学签约作者郭怒发布新书《奔跑</a></li>
+			</ul>
+		</div>
+		<div class="news" id="ne">
+			<div class="nn">
+				<h3>社区热帖</h3>
+				<a href="">更多 &gt;</a>
+			</div>
+			<a class="mm" href="">
+				<img src="uc/40.jpg"><div>【头条】每周烧脑期期不同·看图规律猜答案</div>
+			</a>
+			<ul>
+				<li><a href="">【热门】任务中心全新改革·积分勋章等你拿</a></li>
+				<li><a href="">【每日】小贱日报十则·全网新鲜搞笑都在这</a></li>
+				<li><a href="">【内测】UC神秘新产品·社区测试团限量首邀</a></li>
+				<li><a href="">【问啊】以问答传递见解·你就是我们那道光</a></li>
+				<li><a href="">【反馈】网页问题大收集·研发大神专帖等你</a></li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		<div class="footer">
+			<div class="fo">
+				<dl>
+					<dt><a href="">UC浏览器</a></dt>
+					<dd><a href="">产品动态</a></dd>
+					<dd><a href="">产品下载</a></dd>
+					<dd><a href="">Android实验室版</a></dd>
+					<dd><a href="">功能介绍</a></dd>
+					<dd><a href="">UC闪屏</a></dd>
+					<dd><a href="">意见反馈</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="">公司</a></dt>
+					<dd><a href="">公司首页</a></dd>
+					<dd><a href="">公司概况</a></dd>
+					<dd><a href="">公司动态</a></dd>
+					<dd><a href="">管理团队</a></dd>
+					<dd><a href="">企业文化</a></dd>
+					<dd><a href="">粉丝专区</a></dd>
+					<dd><a href="">荣誉之旅</a></dd>
+					<dd><a href="">联系我们</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="">其它产品</a></dt>
+					<dd><a href="">UC头条</a></dd>
+					<dd><a href="">PP助手</a></dd>
+					<dd><a href="">神马搜索</a></dd>
+					<dd><a href="">UC云</a></dd>
+					<dd><a href="">U点充值</a></dd>
+					<dd><a href="">用户中心</a></dd>
+					<dd><a href="">体验中心</a></dd>
+					<dd><a href="">帮助中心</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="">开放合作</a></dt>
+					<dd><a href="">广告合作</a></dd>
+					<dd><a href="">媒体合作</a></dd>
+					<dd><a href="">运营商合作</a></dd>
+					<dd><a href="">终端厂商合作</a></dd>
+					<dd><a href="">互联网合作</a></dd>
+					<dd><a href="">开发者中心</a></dd>
+					<dd><a href="">安卓开放平台</a></dd>
+					<dd><a href="">游戏开放平台</a></dd>
+					<dd><a href="">移动应用出海</a></dd>
+				</dl>
+				<dl>
+					<dt><a href="">招聘</a></dt>
+					<dd><a href="">社会招聘</a></dd>
+					<dd><a href="">人才推荐</a></dd>
+					<dd><a href="">校园招聘</a></dd>
+					<dd><a href="">实习生招聘</a></dd>
+					<dd><a href="">内部推荐</a></dd>
+					<dd><a href="">走进UC</a></dd>
+				</dl>
+				<dl class="inn">
+					<dt><div><a  class="ico-ch" href=""><span></span>中文版</a></div></dt>
+					<dd class="ico-sj"><a href=""><span></span>手机站</a></dd>
+					<dd class="ico-pad"><a href=""><span></span>Pad站</a></dd>
+					<dd class="ico-tv"><a href=""><span></span>TV站</a></dd>
+					<dd class="ico-weibo"><a href=""><span></span>UC浏览器微博</a></dd>
+					<dd class="ico-tieba"><a href=""><span></span>UC浏览器贴吧</a></dd>
+					<dd class="ico-weixin"><a href=""><span></span>UC浏览器微信</a></dd>
+				</dl>
+			</div>
+			<div class="glink">         		
+         		<div class="links">
+         			<a rel="nofollow" href="//www.alibabagroup.com/cn/global/home" target="_blank">阿里巴巴集团</a>|<a rel="nofollow" href="//www.taobao.com/" target="_blank">淘宝网</a>|<a rel="nofollow" href="//www.tmall.com/" target="_blank">天猫</a>|<a rel="nofollow" href="//ju.taobao.com/" target="_blank">聚划算</a>|<a rel="nofollow" href="//www.aliexpress.com/" target="_blank">全球速卖通</a>|<a rel="nofollow" href="//www.alibaba.com/" target="_blank">阿里巴巴国际交易市场</a>|<a rel="nofollow" href="//www.1688.com/" target="_blank">1688</a>|<a rel="nofollow" href="//www.alimama.com/" target="_blank">阿里妈妈</a>|<a rel="nofollow" href="//www.alitrip.com/" target="_blank">阿里旅行·去啊</a>|<a rel="nofollow" href="//www.aliyun.com/" target="_blank">阿里云计算</a>|<a rel="nofollow" href="//www.yunos.com/" target="_blank">YunOS</a>|<a rel="nofollow" href="//aliqin.cn/" target="_blank">阿里通信</a>|<a rel="nofollow" href="//www.net.cn/" target="_blank">万网</a>|<a rel="nofollow" href="//www.autonavi.com/" target="_blank">高德</a>
+         		
+         			<a href="//www.uc.cn/" target="_blank">UC</a>|<a rel="nofollow" href="//www.umeng.com/" target="_blank">友盟</a>|<a rel="nofollow" href="//www.xiami.com/" target="_blank">虾米</a>|<a rel="nofollow" href="//www.ttpod.com/" target="_blank">天天动听</a>|<a rel="nofollow" href="//www.laiwang.com/" target="_blank">来往</a>|<a rel="nofollow" href="//www.dingtalk.com/" target="_blank">钉钉</a>|<a rel="nofollow" href="//www.alipay.com" target="_blank">支付宝</a>|<a rel="nofollow" href="//www.alijk.com/" target="_blank">阿里健康</a>
+         		</div>
+    		</div>
+    		<div class="glinks">
+         		
+    			<div class="links">
+    				友情链接：<a target="_blank" href="http://www.9game.cn/">手机游戏</a>|<a target="_blank" href="http://tech.163.com/">网易科技</a>|<a href="http://www.dospy.com/" target="_blank">dospy智能手机网</a>|<a target="_blank" href="http://www.liqucn.com/">历趣手机软件</a>|<a target="_blank" href="http://www.feng.com">威锋网</a>|<a target="_blank" href="http://xs.uc.cn/">小说全搜</a>|<a target="_blank" href="http://www.ithome.com/">IT之家</a>|<a target="_blank" href="http://www.qianzhan.com/">前瞻网</a>|<a target="_blank" href="http://www.ruan8.com/">手机软件下载</a>|<a target="_blank" href="http://www.pc6.com/">pc6下载</a>|<a target="_blank" href="http://www.kkyuyin.com/">KK语音</a>|<a target="_blank" href="http://www.anzhi.com/">安卓市场</a>|<a target="_blank" href="http://www.gfan.com/">机锋网</a>
+    			
+    				<a target="_blank" href="http://www.cnmo.com/">手机中国</a>|<a target="_blank" href="http://sj.zol.com.cn/">zol手机软件</a>|<a target="_blank" href="http://www.mumayi.com/">木蚂蚁</a>|<a href="http://www.xdowns.com/" target="_blank">绿色软件联盟</a>|<a target="_blank" href="http://www.tompda.com/">智能手机网</a>|<a target="_blank" href="http://www.baoruan.com/">宝软网</a>|<a target="_blank" href="http://www.appchina.com/">应用汇</a>|<a target="_blank" href="http://www.shendu.com/">深度安卓门户</a>|
+            
+           			<a target="_blank" href="http://www.gamedog.cn/">游戏狗</a>|<a target="_blank" href="http://www.vmall.com/">华为商城</a>|<a target="_blank" href="http://www.admin5.com/">站长网</a>|<a target="_blank" href="http://www.ebrun.com/">电商新闻</a>|<a target="_blank" href="http://www.52pk.com/">52pk游戏网</a>|<a target="_blank" href="http://www.chinaz.com/">站长之家</a>|<a target="_blank" href="http://www.chinabyte.com/">比特网</a>|<a target="_blank" href="http://www.iresearch.cn/">艾瑞网</a>|<a target="_blank" href="http://www.uzzf.com/">东坡下载</a>|
+            
+            		<a target="_blank" href="http://www.3533.com/">手机世界</a>|<a target="_blank" href="http://leiphone.com/">雷锋网</a>|<a target="_blank" href="http://baike.1688.com/">阿里巴巴生意经</a>|<a target="_blank" href="http://www.52z.com/">飞翔下载</a>|<a target="_blank" href="http://www.chachaba.com/">深圳地图</a>|<a target="_blank" href="http://www.mafengwo.cn/">蚂蜂窝旅游攻略</a>|<a target="_blank" href="http://www.newhua.com/">牛华网</a>|<a target="_blank" href="http://www.dashi.com/">刷机</a>|<a target="_blank" href="http://www.ludashi.com/">鲁大师</a>|<a target="_blank" href="http://www.znds.com/">智能电视</a>|<a target="_blank" href="http://www.lizhi.fm/">网络电台</a>|<a target="_blank" href="http://www.yzmg.com/">亿智蘑菇</a>|<a href="http://toutiao.uc.cn/" target="_blank">UC头条</a>|<a href="http://game.open.uc.cn/" target="_blank">阿里游戏</a>|<a href="http://business.9apps.com/" target="_blank">9Apps Business</a>
+        		</div>
+        	</div>
+        	<div class="foot">
+        		<div class="logo_footer"><a href=""><img src="uc/logo_company.png"></a></div>
+        		<div class="fanva">
+            		<p><a rel="nofollow" href="http://sq.ccm.gov.cn:80/ccnt/sczr/service/business/emark/toDetail/9E6DB568731C4124B4C37E6F5356FA53" target="_blank"><img src="uc/qa_wen.png" style="margin-right:5px;"></a>
+            		<a rel="nofollow" style="margin-right:5px;" href="http://netadreg.gzaic.gov.cn/ntmm/WebSear/WebLogoPub.aspx?logo=440106106022005031000310" target="_blank"><img src="uc/gs.png"></a>
+            		<a rel="nofollow" href="http://www.gzjd.gov.cn/gsmpro/web/serviceitem/web_alert_view.html" target="_blank"><img src="uc/wsbj.png"></a></p>
+           			 <p style="margin-top:6px;"><a rel="nofollow" style="margin-right:5px;" href="http://www.12377.cn" target="_blank"><img src="uc/12377_cn.png"></a>
+           			 <a rel="nofollow" style="margin-right:5px;" href="https://ss.knet.cn/verifyseal.dll?sn=e14060444010049619eim4000000&amp;ct=df&amp;a=1&amp;pa=0.12202448288421702" target="_blank"><img src="uc/knet_cn.png"></a>
+           			 <a rel="nofollow" href="http://white.anva.org.cn/" target="_blank"><img src="uc/anva.png"></a></p>
+       			 </div>
+        		<div class="copy-text">
+        			©2004-2016  uc.cn  版权所有    网络文化经营许可证：粤网文[2013]0245-095号<br>
+        			中华人民共和国互联网药品信息服务资格证：（粤）-非经营性-2011-0120 <br> 增值电信业务经营许可证: 粤B2-20070379 <a rel="nofollow" href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备09210879号</a><br>
+        			穗公网监备案证第44010650010141号 &nbsp; 违法和不良信息举报：客服微信 ucwebkf
+        		</div>
+        		<div class="clear"></div>
+        	</div>
+		</div>	
+	</footer>
+</body>
+</html>

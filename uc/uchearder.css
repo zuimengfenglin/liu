@@ -1,0 +1,164 @@
+body {
+	color: #666;
+}
+header {
+	width: 990px;margin: auto;height: 70px;
+}
+a {text-decoration: none;color: #444455;outline: none;}
+a:hover {color: #F60;}
+/*头部*/
+#logo {
+	width: 200px;height: 43px;margin-top: 10px;float: left;
+}
+.nav {
+	float: right;display: block;width: 650px;height: 70px;
+}
+.nav ul li {
+	display: block;width: 60px;height: 67px;margin: 0 16px;float: left;
+	text-align: center;position:relative;font-size: 20px;line-height: 70px;
+	border-bottom: 3px solid rgba(255,255,255,.95);
+}
+
+.nav .na {border-bottom: 3px solid #F60;}
+.nav ul li .nv {
+	position:absolute;visibility:visible;left:-40px;top:70px;width: 142px;
+	border:1px solid #f6f6f6;display: none;z-index: 5;background: #fff;
+}
+.nav ul li .nv li {
+	font-size: 14px;line-height: 18px;width:130px;height: 18px;display: block;
+	padding: 8px 5px;margin: 0;
+}
+/*img轮播*/
+.content{
+	height: 400px;margin: 0 auto;position: relative;
+}
+#scroll{
+	position: absolute;bottom:10px;text-align: center;height: 18px;width: 100%;
+	z-index: 50;
+}
+#scroll span{
+	display: inline-block;background: url(scroll_dot.png);width: 18px;height: 18px;
+	margin: 0 2px;
+}
+.im {
+	width: 100%;height: 400px;
+}
+/*ico*/
+.plat{
+	width: 990px;height: 146px;margin: 0 auto;position: relative;
+}
+#ss{
+	position: absolute;top: -32px;right: 0;width: 128px;height: 160px;
+	text-align: center;font-size:12px;
+}
+.list-plat{
+	display: block;width: 990px;height: 146px;
+}
+.list-plat li{
+	float: left;margin: 5px 13px 0;display: block;width: 112px;height: 135px;
+}
+.list-plat li a{
+	display: block;width: 112px;height: 135px;text-decoration: none;
+	color: #444455;
+}
+
+.ico{
+	background: url(ico.png) no-repeat;width: 112px;height: 70px;padding: 10px 0 0;
+}
+.android .ico{background-position: 22px 15px;}
+.iphone .ico{background-position:-121px 15px; }
+.pc .ico{background-position: -265px 15px;}
+.pad .ico{background-position:-957px 15px; }
+.tv .ico{background-position:-691px 15px; }
+.wp .ico{background-position:  -832px 15px;}
+.text{
+	width: 112px;height: 22px;padding: 3px 0 0 0;text-align: center;font-size: 12px;
+}
+/*new*/
+.new {
+	padding: 35px 0;margin: auto;width: 990px;font-size: 14px;zoom:1;
+}
+.new:after {
+	content: "";clear: both;width: 0;height: 0;display: block;
+}
+.news {
+	width: 290px;margin-right:58px;float: left; line-height: 26px;
+}
+#ne {
+	margin: 0;
+}
+.nn{
+	width: 290px;height: 26px;margin-bottom: 20px;line-height: 30px;
+}
+.nn h3{
+	float: left;font-weight: normal;font-size: 20px;color: #555;
+}
+.nn a {
+	float: right;
+}
+.mm {
+	display: block;margin-bottom: 10px;
+}
+.mm img {
+	width: 290px;height: 120px;vertical-align: top;
+}
+.mm div {
+	width: 290px;height: 34px;text-align: center;line-height: 34px;background: #f2f2f2;
+}
+/*wei bu */
+footer {
+	padding: 25px 0 40px 0;font-size: 12px;background: #333;color: #666;
+}
+footer a{
+	color: #aaa;
+}
+.footer {
+	margin: auto;width: 990px;
+}
+.fo {zoom:1;}
+.fo:after {
+	content:"";clear: both;display: block;width: 0;height: 0;
+}
+.footer dl{
+	width: 165px;float: left;line-height: 18px;
+}
+.footer dt{
+	font-weight: bold;
+}
+.glink {
+	width: 990px;margin-top: 20px;border-top: 1px solid #666;
+}
+.links {
+	padding: 9px 0 9px 3px;line-height: 20px; border-bottom: 1px solid #666; 
+}
+.links a{
+	margin: 0 7px;display: inline-block;
+}
+.logo_footer{
+	margin-top:20px;float: left;
+}
+.foot {
+	margin-top:20px;zoom:1;
+}
+.foot:after {
+	content: "";width: 0;height: 0;clear: both;display: block;
+}
+.copy-text {
+	margin-left: 132px;padding-top: 6px;line-height: 20px;
+}
+.fanva{float: right;text-align: right;}
+.footer .inn {
+	line-height: 24px;font-size: 14px;
+}
+.inn a {display: block;margin: 2px 0;height: 24px;line-height: 24px;font-size: 14px;}
+.inn dt {margin-bottom:12px;margin-top: -4px; }
+.inn span {
+	display:inline-block;width: 24px;height: 24px;background: url(ico.png) no-repeat;vertical-align: top;
+}
+.ico-ch span {background-position:-8px -250px; }
+.ico-sj span {background-position: -8px -280px; }
+.ico-pad span {background-position:-8px -377px; }
+.ico-tv span {background-position: -8px -409px;}
+.ico-weibo span {background-position:-8px -310px; }
+.ico-tieba span {background-position:-8px -340px; }
+.ico-weixin span {background-position: -9px -445px;}
